@@ -17,6 +17,6 @@
   - name: Enable Httpd
     service:
       name: httpd
-      enable: true
+      enabled: true
 
 ...

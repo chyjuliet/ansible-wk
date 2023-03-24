@@ -1,22 +1,22 @@
-  ---
-  - name: Deploy Web App
-    hosts: n2
-    become: yes
+---
+- name: Deploy Web App
+  hosts: n2
+  become: yes
 
-    tasks: 
-    - name: Install git
-      yum:
-      name: git
-      state: present
+  tasks: 
+  - name: Install git
+    yum:
+     name: git
+     state: present
 
-    - name: Host code
-      service:
-      name: httpd
-      state: started
+  - name: Host code
+    service:
+     name: httpd
+     state: started
 
-    - name: Enable Httpd
-      git:
-        repo: https://github.com/CeeyIT-Solutions/food.git
-        dest: /var/www/html
+  - name: Enable Httpd
+    git:
+      repo: https://github.com/CeeyIT-Solutions/food.git
+      dest: /var/www/html
 
-  ...
+...
